@@ -41,10 +41,17 @@ function personController($scope) {
         $scope.myVar = !$scope.myVar;
     };}
 </script>
+<script type="text/javascript">
+ var blogposts = angular.module('blogposts',[]);
+blogposts.config(function($interpolateProvider) {
+  $interpolateProvider.startSymbol('{[{');
+  $interpolateProvider.endSymbol('}]}');
+});
+</script>
 </head>
 <body>
 
-<div ng-app="" ng-init="names=[
+<div ng-app="blogposts" ng-init="names=[
 {name:'Jani',country:'Norway'},
 {name:'Hege',country:'Sweden'},
 {name:'Kai',country:'Denmark'}]" ng-controller="personController">
@@ -55,12 +62,12 @@ function personController($scope) {
 数量： <input type="number" ng-model="quantity">
 价格： <input type="number" ng-model="price">
 
-<p><b>总价：</b> {{ (quantity * price) | currency }}</p>
+<p><b>总价：</b> {[{ quantity * price }]}</p>
 
   <p>使用 ng-repeat 来循环数组</p>
   <ul>
   <li ng-repeat="x in names">
-    {{ x.name + ', ' + x.country }}
+    {[{ x.name + ', ' + x.country }]}
   </li>
   </ul>
 
@@ -71,7 +78,7 @@ function personController($scope) {
 名： <input type="text" ng-model="person.firstName"><br>
 姓： <input type="text" ng-model="person.lastName"><br>
 <br>
-姓名： {{person.firstName + " " + person.lastName}}
+姓名： {[{person.firstName + " " + person.lastName}]}
 </p>
 
 <p>
@@ -84,10 +91,9 @@ function personController($scope) {
 
 
 <button ng-click="count = count + 1">点我！</button>
-<p>{{ count }}</p>
-
+<p>{[{ count }]}</p>
 </div>
-<script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+
 
 </body>
 </html>
