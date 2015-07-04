@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+function personController($scope) {
+    $scope.person = {
+        firstName: "John",
+        lastName: "Doe"
+    };
+    $scope.myVar = true;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };}
+</script>
+</head>
+<body>
+
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]" ng-controller="personController">
+  <p>在输入框中尝试输入：</p><p ng-bind="name"></p>
+  <p>姓名：<input type="text" ng-model="name"></p>
+  <h2>价格计算器</h2>
+
+数量： <input type="number" ng-model="quantity">
+价格： <input type="number" ng-model="price">
+
+<p><b>总价：</b> {{ (quantity * price) | currency }}</p>
+
+  <p>使用 ng-repeat 来循环数组</p>
+  <ul>
+  <li ng-repeat="x in names">
+    {{ x.name + ', ' + x.country }}
+  </li>
+  </ul>
+
+
+<button ng-click="toggle()">隐藏/显示</button>
+
+<p ng-show="myVar">
+名： <input type="text" ng-model="person.firstName"><br>
+姓： <input type="text" ng-model="person.lastName"><br>
+<br>
+姓名： {{person.firstName + " " + person.lastName}}
+</p>
+
+<p>
+<button ng-disabled="mySwitch">点我！</button>
+</p>
+
+<p>
+<input type="checkbox" ng-model="mySwitch">按钮
+</p>
+
+
+<button ng-click="count = count + 1">点我！</button>
+<p>{{ count }}</p>
+
+</div>
+<script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+
+</body>
+</html>
