@@ -50,8 +50,8 @@
             position: absolute;
             position: absolute;
             color: #fff;
-            width: 200px;
-            height: 200px;
+            width: 50px;
+            height: 50px;
             background: #AEEEEE;
             cursor: pointer;
             letter-spacing: 5px;
@@ -79,6 +79,15 @@
                 }, 80)
             }
         };
+        $(function () {
+            $('#goTop').click(function () {
+                $('html,body').animate({scrollTop: '0px'}, 800);
+            });
+            $('#goBottom').click(function () {
+                var height = document.body.scrollHeight;
+                $('html,body').animate({scrollTop: height}, 800);
+            });
+        });
         function personController($scope) {
             $scope.person = {
                 firstName: "John",
