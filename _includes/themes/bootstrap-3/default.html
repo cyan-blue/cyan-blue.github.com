@@ -43,48 +43,15 @@
     <script src="{{ ASSET_PATH }}/jquery/jquery-1.8.13.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
     <style type="text/css">
-        .floatView {
-            margin-right: 0px;
-            top: 50px;
-            left: 20px;
-            position: absolute;
-        }
+
         .floatButton {
             margin-right: 0px;
             bottom: 50px;
             right: 20px;
             position: absolute;
         }
-
-        #box {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            color: #fff;
-            width: 200px;
-            height: 200px;
-            background: #AEEEEE;
-            cursor: pointer;
-            letter-spacing: 5px;
-            text-align: center;
-            font: 12px/200px Arial;
-            margin: -100px 0 0 -100px;
-        }
-
     </style>
     <script>
-        window.onload = function () {
-            var oBox = document.getElementById("box");
-            var timer = null;
-            oBox.onclick = function () {
-                var i = 0;
-                clearInterval(timer);
-                timer = setInterval(function () {
-                    oBox.style.display = i++ % 2 ? "none" : "block";
-                    i > 6 && (clearInterval(timer))
-                }, 80)
-            }
-        };
         function personController($scope) {
             $scope.person = {
                 firstName: "John",
@@ -139,7 +106,7 @@
     </div>
 
 </div>
-<div id="box" class="floatView">点我啊</div>
+
 
 <div class="btn-group-vertical floatButton">
     <button type="button" class="btn btn-default" id="goTop" title="去顶部"><span
