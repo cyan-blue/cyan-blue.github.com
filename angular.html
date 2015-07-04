@@ -5,23 +5,7 @@ header : Post Angular
 group: navigation
 ---
 {% include JB/setup %}
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<script>
-function personController($scope) {
-    $scope.person = {
-        firstName: "John",
-        lastName: "Doe"
-    };
-    $scope.myVar = true;
-    $scope.toggle = function() {
-        $scope.myVar = !$scope.myVar;
-    };}
-</script>
-</head>
-<body>
+
 
 <div ng-app="" ng-init="names=[
 {name:'Jani',country:'Norway'},
@@ -66,7 +50,3 @@ function personController($scope) {
 <p>{{ count }}</p>
 
 </div>
-<script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
-
-</body>
-</html>
