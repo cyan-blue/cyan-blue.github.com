@@ -48,7 +48,6 @@
             top: 50px;
             left: 20px;
             position: absolute;
-            position: absolute;
             color: #fff;
             width: 50px;
             height: 50px;
@@ -58,7 +57,12 @@
             text-align: center;
             font: 12px/200px Arial;
         }
-
+        .floatView1 {
+            margin-right: 0px;
+            top: 50px;
+            left: 20px;
+            position: absolute;
+        }
         .floatButton {
             margin-right: 0px;
             bottom: 50px;
@@ -124,7 +128,7 @@
 
 
     </style>
-    <script src="{{ STATIC_URL }}js/prefixfree.min.js"></script>
+    <script src="{{ ASSET_PATH }}/js/prefixfree.min.js"></script>
     <script>
         window.onload = function () {
             var oBox = document.getElementById("box");
@@ -203,7 +207,7 @@
 </div>
 
 <div id="box" class="floatView">点我啊</div>
-<div class="floatView">
+<div class="floatView1">
     <figure>
         <section>
             <div></div>
