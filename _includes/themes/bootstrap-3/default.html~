@@ -87,5 +87,23 @@
     <!--<script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>-->
     <script src="{{ ASSET_PATH }}/jquery/jquery-1.8.13.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+    <script>
+        function personController($scope) {
+            $scope.person = {
+                firstName: "John",
+                lastName: "Doe"
+            };
+            $scope.myVar = true;
+            $scope.toggle = function () {
+                $scope.myVar = !$scope.myVar;
+            };
+        }
+        var blogposts = angular.module('blogposts', []);
+        blogposts.config(function ($interpolateProvider) {
+            $interpolateProvider.startSymbol('{[{');
+            $interpolateProvider.endSymbol('}]}');
+        });
+    </script>
+</script>
   </body>
 </html>

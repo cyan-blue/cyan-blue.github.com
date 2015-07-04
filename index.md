@@ -27,29 +27,6 @@ Here's a sample "posts list".
 
 ## To-Do
 
-<html>
-<head>
-<meta charset="UTF-8">
-<script>
-function personController($scope) {
-    $scope.person = {
-        firstName: "John",
-        lastName: "Doe"
-    };
-    $scope.myVar = true;
-    $scope.toggle = function() {
-        $scope.myVar = !$scope.myVar;
-    };}
-</script>
-<script type="text/javascript">
- var blogposts = angular.module('blogposts',[]);
-blogposts.config(function($interpolateProvider) {
-  $interpolateProvider.startSymbol('{[{');
-  $interpolateProvider.endSymbol('}]}');
-});
-</script>
-</head>
-<body>
 
 <div ng-app="blogposts" ng-init="names=[
 {name:'Jani',country:'Norway'},
@@ -95,6 +72,5 @@ blogposts.config(function($interpolateProvider) {
 </div>
 
 
-</body>
-</html>
+
 
