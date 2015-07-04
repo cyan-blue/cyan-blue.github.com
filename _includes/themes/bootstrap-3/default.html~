@@ -29,7 +29,7 @@
 
     <link href="{{ ASSET_PATH }}/bootstrap3.0/css/bootstrap3.2.0.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ ASSET_PATH }}jquery/jquery-ui-1.10.1.css"/>
-    <script src="{{ ASSET_PATH }}/jquery/jquery-1.8.13.min.js"></script>
+    <script src="{{ ASSET_PATH }}jquery/jquery-1.8.13.min.js"></script>
     <script src='{{ STATIC_URL }}jquery/addons/jquery.form.js'></script>
     <script src="{{ ASSET_PATH }}/bootstrap3.0/js/bootstrap-3.2.0.min.js"></script>
 
