@@ -11,7 +11,7 @@ group: navigation
         left: 0;
         bottom: 0;
         right: 0;
-        z-index: 10000000;
+        z-index: 0;
         background: white;
         color: #74b936;
         text-align: center
@@ -67,17 +67,101 @@ group: navigation
 
 </style>
 
+<style>
+    @keyframes move {
+        from {
+            transform: translate(0, 50%);
+        }
+        to {
+            transform: translate(0, 850%);
+        }
+    }
+
+    figure {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        background: #1c1c1c;
+    }
+
+    section {
+        width: 10%;
+        height: 100%;
+        position: absolute;
+        left: 45%;
+    }
+
+    section:nth-child(2) {
+        transform: rotate(22.5deg);
+    }
+
+    section:nth-child(3) {
+        transform: rotate(45deg);
+    }
+
+    section:nth-child(4) {
+        transform: rotate(67.5deg);
+    }
+
+    figure div {
+        height: 10%;
+        border-radius: 50%;
+        background: dodgerblue;
+        animation: move 1s ease-in-out infinite alternate;
+    }
+
+    figure:nth-child(1) > section:nth-child(1) > div {
+        animation-delay: -0.1875s;
+    }
+
+    figure:nth-child(1) > section:nth-child(2) > div {
+        animation-delay: -0.15s;
+    }
+
+    figure:nth-child(1) > section:nth-child(3) > div {
+        animation-delay: -0.9375s;
+    }
+
+
+</style>
+
 <div id="loading">
     <div class='loading-container'>
-        <h1 id='loading-app-name'>马克飞象</h1>
+        <h1 id='loading-app-name'>CYAN BLUE</h1>
 
-        <h3><span id='loading-slogan'>专为印象笔记打造的 Markdown 编辑器</span></h3>
+        <h3><span id='loading-slogan'>加油中</span></h3>
 
-        <p id='loading-text'>加载中...</p>
+        <p id='loading-text'>
+            <figure>
+                <section>
+                    <div></div>
+                </section>
+                <section>
+                    <div></div>
+                </section>
+                <section>
+                    <div></div>
+                </section>
+                <section>
+                    <div></div>
+                </section>
+                <section>
+                    <div></div>
+                </section>
+                <section>
+                    <div></div>
+                </section>
+                <section>
+                    <div></div>
+                </section>
+            </figure>
+        </p>
 
         <p id='loading-view-doc'><a
-                href="https://www.evernote.com/shard/s21/sh/f481aee9-203a-431d-9c2c-b7d7b0e2e4c0/35e078a7e2696d2ad54239c094d3865a"
-                target='_blank'>看看示例文档</a></p>
+                href="http://cyan-blue.github.io/"
+                target='_blank'>看看博客去</a></p>
 
     </div>
 </div>
