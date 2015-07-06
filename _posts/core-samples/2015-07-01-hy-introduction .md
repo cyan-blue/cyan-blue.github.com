@@ -1,6 +1,6 @@
 ---
 layout: post
-category : python 时间戳 datetime string 转换
+category : "Python"
 tagline: ""
 
 ---
@@ -59,4 +59,12 @@ Out[17]: '2015-06-05'
     Out[17]: '2015-06-05'
     ---
 
-    ... contents ...
+**Developers like Jekyll because we can write content like we write code:**
+
+- Ability to write content in markdown or textile in your favorite text-editor.
+- Ability to write and preview your content via localhost.
+- No internet connection required.
+- Ability to publish via git.
+- Ability to host your blog on a static web-server.
+- Ability to host freely on GitHub Pages.
+- No database required.
