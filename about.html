@@ -11,7 +11,7 @@ group: navigation
         left: 0;
         bottom: 0;
         right: 0;
-        z-index: 0;
+        z-index: 10000000;
         background: white;
         color: #74b936;
         text-align: center
@@ -64,7 +64,21 @@ group: navigation
         margin-bottom: 40px
     }
 
+    #loading-view-doc {
+        font-size: 16px;
+        margin: 10px auto
+    }
 
+    #loading #loading-view-doc a {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #74b936
+    }
+
+    #loading #loading-view-doc a:link, #loading #loading-view-doc a:hover, #loading #loading-view-doc a:active, #loading #loading-view-doc a:visited {
+        color: #74b936;
+        text-decoration: none
+    }
 </style>
 
 <style>
