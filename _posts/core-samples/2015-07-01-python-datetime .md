@@ -2,7 +2,7 @@
 layout: post
 category : "Python"
 tagline: ""
-
+tags : [python]
 ---
 {% include JB/setup %}
 
