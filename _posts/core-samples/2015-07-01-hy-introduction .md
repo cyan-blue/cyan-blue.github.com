@@ -53,6 +53,7 @@ Out[6]: datetime.datetime(2015, 5, 1, 12, 0, 1)
 In [17]: time.strftime('%Y-%m-%d',time.localtime(aa))
 Out[17]: '2015-06-05'
 </code>
+
     ---
     In [17]: time.strftime('%Y-%m-%d',time.localtime(aa))
     Out[17]: '2015-06-05'
