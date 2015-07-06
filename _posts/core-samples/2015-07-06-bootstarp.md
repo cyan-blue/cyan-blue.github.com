@@ -1,3 +1,10 @@
+---
+layout: post
+category : "bootstarp"
+tagline: ""
+tags : [js]
+---
+
 <script id="ad-template" type="text/x-handlebars-template">
     {{#each ads}}
     <div class="col-xs-12 col-md-6">
