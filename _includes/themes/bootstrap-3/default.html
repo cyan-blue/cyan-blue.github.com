@@ -69,7 +69,8 @@
             margin-right: 0px;
             bottom: 50px;
             right: 20px;
-            position: absolute;
+            position: fixed;
+            cursor: pointer;
         }
 
         @keyframes move {
@@ -240,9 +241,7 @@
     <button type="button" class="btn btn-default" id="goBottom" title="去底部"><span
             class="glyphicon glyphicon-arrow-down"></span></button>
 </div>
-<div id="topcontrol" title="回到顶部"
-     style="position: fixed; bottom: 165px; right: 95px; cursor: pointer; display: block;">去底部
-</div>
+
 <div id="footer">
     <div class="container">
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
