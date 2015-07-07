@@ -15,11 +15,11 @@ tags : [js]
         }
 
         .post-featured-image a:hover img {
-            -webkit-transform: scale(1.08) rotate(-2deg);
-            -moz-transform: scale(1.08) rotate(-2deg);
-            -o-transform: scale(1.08) rotate(-2deg);
-            -ms-transform: scale(1.08) rotate(-2deg);
-            transform: scale(1.08) rotate(-2deg);
+            -webkit-transform: scale(1.1) rotate(-370deg);
+            -moz-transform: scale(1.1) rotate(-370deg);
+            -o-transform: scale(1.1) rotate(-370deg);
+            -ms-transform: scale(1.1) rotate(-370deg);
+            transform: scale(1.1) rotate(-370deg);
         }
  </style>
  <div class="wrap">
@@ -259,7 +259,7 @@ tags : [js]
 
     </div>
 
-    <footer>
+
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -272,7 +272,7 @@ tags : [js]
                 </div>
             </div>
         </div>
-    </footer>
+
 
 
 
