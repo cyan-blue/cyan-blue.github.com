@@ -6,7 +6,7 @@ tags : [js]
 ---
 
 <style>
-        .thumbnail img {
+        .post-featured-image img {
             box-shadow: 2px 2px 5px rgba(187, 187, 187, 0.5);
             -webkit-transition: -webkit-transform 0.2s ease-out;
             -moz-transition: -moz-transform 0.2s ease-out;
@@ -14,7 +14,7 @@ tags : [js]
             transition: transform 0.2s ease-out;
         }
 
-        .thumbnail a:hover img {
+        .post-featured-image a:hover img {
             -webkit-transform: scale(1.08) rotate(-2deg);
             -moz-transform: scale(1.08) rotate(-2deg);
             -o-transform: scale(1.08) rotate(-2deg);
