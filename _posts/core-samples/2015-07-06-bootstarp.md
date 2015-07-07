@@ -5,6 +5,23 @@ tagline: ""
 tags : [js]
 ---
 
+<style>
+        .thumbnail img {
+            box-shadow: 2px 2px 5px rgba(187, 187, 187, 0.5);
+            -webkit-transition: -webkit-transform 0.2s ease-out;
+            -moz-transition: -moz-transform 0.2s ease-out;
+            -o-transition: -o-transform 0.2s ease-out;
+            transition: transform 0.2s ease-out;
+        }
+
+        .thumbnail a:hover img {
+            -webkit-transform: scale(1.08) rotate(-2deg);
+            -moz-transform: scale(1.08) rotate(-2deg);
+            -o-transform: scale(1.08) rotate(-2deg);
+            -ms-transform: scale(1.08) rotate(-2deg);
+            transform: scale(1.08) rotate(-2deg);
+        }
+ </style>
  <div class="wrap">
         <div class="header"
              style="background-image: url(http://img02.tooopen.com/images/20150612/tooopen_sy_130064393183.jpg)">
