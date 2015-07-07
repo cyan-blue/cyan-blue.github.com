@@ -57,12 +57,14 @@
             text-align: center;
             font: 12px/200px Arial;
         }
+
         .floatView1 {
             margin-right: 0px;
             top: 300px;
             left: 20px;
             position: absolute;
         }
+
         .floatButton {
             margin-right: 0px;
             bottom: 50px;
@@ -238,7 +240,9 @@
     <button type="button" class="btn btn-default" id="goBottom" title="去底部"><span
             class="glyphicon glyphicon-arrow-down"></span></button>
 </div>
-
+<div id="topcontrol" title="回到顶部"
+     style="position: fixed; bottom: 165px; right: 95px; cursor: pointer; display: block;">去底部
+</div>
 <div id="footer">
     <div class="container">
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
