@@ -133,7 +133,9 @@
 
     </style>
     <script src="{{ ASSET_PATH }}/js/prefixfree.min.js"></script>
+    <script src="http://www.bootcss.com/p/grumblejs/js/jquery.grumble.min.js"></script>
     <script>
+        var isSequenceComplete = true;
         window.onload = function () {
             var oBox = document.getElementById("box");
             var timer = null;
@@ -154,6 +156,31 @@
                 var height = document.body.scrollHeight;
                 $('html,body').animate({scrollTop: height}, 800);
             });
+            $('#darkside').click(function (e) {
+                var $me = $(this), interval;
+
+                e.preventDefault();
+
+                $me.grumble(
+                        {
+                            angle: 130,
+                            text: 'Look at me!',
+                            type: 'alt-',
+                            distance: 10,
+                            hideOnClick: true,
+                            onShow: function () {
+                                var angle = 130, dir = 1;
+                                interval = setInterval(function () {
+                                    (angle > 220 ? (dir = -1, angle--) : ( angle < 130 ? (dir = 1, angle++) : angle += dir));
+                                    $me.grumble('adjust', {angle: angle});
+                                }, 25);
+                            },
+                            onHide: function () {
+                                clearInterval(interval);
+                            }
+                        }
+                );
+            });
         });
         function personController($scope) {
             $scope.person = {
@@ -170,35 +197,8 @@
             $interpolateProvider.startSymbol('{[{');
             $interpolateProvider.endSymbol('}]}');
         });
-    </script>
-    <script src="http://www.bootcss.com/p/grumblejs/js/jquery.grumble.min.js"></script>
-    <script>
-        var isSequenceComplete = true;
-        $('#darkside').click(function (e) {
-            var $me = $(this), interval;
 
-            e.preventDefault();
 
-            $me.grumble(
-                    {
-                        angle: 130,
-                        text: 'Look at me!',
-                        type: 'alt-',
-                        distance: 10,
-                        hideOnClick: true,
-                        onShow: function () {
-                            var angle = 130, dir = 1;
-                            interval = setInterval(function () {
-                                (angle > 220 ? (dir = -1, angle--) : ( angle < 130 ? (dir = 1, angle++) : angle += dir));
-                                $me.grumble('adjust', {angle: angle});
-                            }, 25);
-                        },
-                        onHide: function () {
-                            clearInterval(interval);
-                        }
-                    }
-            );
-        });
     </script>
 </head>
 
