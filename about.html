@@ -1,146 +1,147 @@
----
-layout: page
-title : 关于
-header : None
-group: navigation
----
-<style type="text/css">
-    #loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 10000000;
-        background: white;
-        color: #74b936;
-        text-align: center
-    }
-
-    #loading .loading-container {
-        position: absolute;
-        margin: auto;
-        left: 0;
-        right: 0;
-        top: 30%;
-        bottom: 0
-    }
-
-    #loading b {
-        color: white;
-        background: #74b936;
-        font-weight: normal;
-        padding: 5px 5px;
-        margin: 10px;
-        font-size: 50px
-    }
-
-    #loading h1, #loading h2, #loading h3, #loading h4 {
-        font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
-        text-align: center
-    }
-
-    #loading .reverse {
-        color: white !important;
-        background: #74b936 !important;
-        padding: 4px;
-        border-radius: 4px
-    }
-
-    #loading #loading-app-name {
-        text-align: center;
-        font-size: 54px;
-        margin-top: 0;
-        margin-bottom: .8em
-    }
-
-    #loading #loading-slogan {
-        font-weight: normal
-    }
-
-    #loading #loading-text {
-        margin: 80px auto;
-        text-align: center;
-        margin-bottom: 40px
-    }
-
-    #loading-view-doc {
-        font-size: 16px;
-        margin: 10px auto
-    }
-
-    #loading #loading-view-doc a {
-        padding: 10px;
-        border-radius: 6px;
-        border: 1px solid #74b936
-    }
-
-    #loading #loading-view-doc a:link, #loading #loading-view-doc a:hover, #loading #loading-view-doc a:active, #loading #loading-view-doc a:visited {
-        color: #74b936;
-        text-decoration: none
-    }
-</style>
-
-<style>
-    @keyframes move {
-        from {
-            transform: translate(0, 50%);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>关于我</title>
+    <style type="text/css">
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 10000000;
+            background: white;
+            color: #74b936;
+            text-align: center
         }
-        to {
-            transform: translate(0, 850%);
+
+        #loading .loading-container {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 30%;
+            bottom: 0
         }
-    }
 
-    figure {
-        margin: 0 auto;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        position: relative;
-        background: #1c1c1c;
-    }
+        #loading b {
+            color: white;
+            background: #74b936;
+            font-weight: normal;
+            padding: 5px 5px;
+            margin: 10px;
+            font-size: 50px
+        }
 
-    section {
-        width: 10%;
-        height: 100%;
-        position: absolute;
-        left: 45%;
-    }
+        #loading h1, #loading h2, #loading h3, #loading h4 {
+            font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+            text-align: center
+        }
 
-    section:nth-child(2) {
-        transform: rotate(22.5deg);
-    }
+        #loading .reverse {
+            color: white !important;
+            background: #74b936 !important;
+            padding: 4px;
+            border-radius: 4px
+        }
 
-    section:nth-child(3) {
-        transform: rotate(45deg);
-    }
+        #loading #loading-app-name {
+            text-align: center;
+            font-size: 54px;
+            margin-top: 0;
+            margin-bottom: .8em
+        }
 
-    section:nth-child(4) {
-        transform: rotate(67.5deg);
-    }
+        #loading #loading-slogan {
+            font-weight: normal
+        }
 
-    figure div {
-        height: 10%;
-        border-radius: 50%;
-        background: dodgerblue;
-        animation: move 1s ease-in-out infinite alternate;
-    }
+        #loading #loading-text {
+            margin: 80px auto;
+            text-align: center;
+            margin-bottom: 40px
+        }
 
-    figure:nth-child(1) > section:nth-child(1) > div {
-        animation-delay: -0.1875s;
-    }
+        #loading-view-doc {
+            font-size: 16px;
+            margin: 10px auto
+        }
 
-    figure:nth-child(1) > section:nth-child(2) > div {
-        animation-delay: -0.15s;
-    }
+        #loading #loading-view-doc a {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #74b936
+        }
 
-    figure:nth-child(1) > section:nth-child(3) > div {
-        animation-delay: -0.9375s;
-    }
+        #loading #loading-view-doc a:link, #loading #loading-view-doc a:hover, #loading #loading-view-doc a:active, #loading #loading-view-doc a:visited {
+            color: #74b936;
+            text-decoration: none
+        }
+    </style>
+
+    <style>
+        @keyframes move {
+            from {
+                transform: translate(0, 50%);
+            }
+            to {
+                transform: translate(0, 850%);
+            }
+        }
+
+        figure {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            background: #1c1c1c;
+        }
+
+        section {
+            width: 10%;
+            height: 100%;
+            position: absolute;
+            left: 45%;
+        }
+
+        section:nth-child(2) {
+            transform: rotate(22.5deg);
+        }
+
+        section:nth-child(3) {
+            transform: rotate(45deg);
+        }
+
+        section:nth-child(4) {
+            transform: rotate(67.5deg);
+        }
+
+        figure div {
+            height: 10%;
+            border-radius: 50%;
+            background: dodgerblue;
+            animation: move 1s ease-in-out infinite alternate;
+        }
+
+        figure:nth-child(1) > section:nth-child(1) > div {
+            animation-delay: -0.1875s;
+        }
+
+        figure:nth-child(1) > section:nth-child(2) > div {
+            animation-delay: -0.15s;
+        }
+
+        figure:nth-child(1) > section:nth-child(3) > div {
+            animation-delay: -0.9375s;
+        }
 
 
-</style>
-
+    </style>
+</head>
+<body>
 <div id="loading">
     <div class='loading-container'>
         <h1 id='loading-app-name'>CYAN BLUE</h1>
@@ -179,3 +180,4 @@ group: navigation
 
     </div>
 </div>
+</body>
