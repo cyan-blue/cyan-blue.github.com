@@ -1,183 +1,1362 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><title>person</title>
+    <meta name="description" content="通过AirJD的免费建站系统，您可以在几分钟内完成企业网站、产品宣传页、会议/活动的官方网站以及个人主页的在线设计和制作">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>关于我</title>
-    <script src="{{ ASSET_PATH }}/jquery/jquery-1.8.13.min.js"></script>
-    <script src="{{ ASSET_PATH }}/js/prefixfree.min.js"></script>
-    <style type="text/css">
-        #loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 10000000;
-            background: white;
-            color: #74b936;
-            text-align: center
-        }
+    <meta name="generator" content="AirJD">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://airjd.com/res/editor_20150711.css">
+    <link rel="stylesheet" href="http://airjd.com/res/font-awesome.4.3.css">
+    <link rel="stylesheet" href="http://airjd.com/res/simple-line-icons.css">
+    <link rel="stylesheet" href="http://airjd.com/res/animate.min.css">
+    <!--[if lt IE 9]>
+    <script src="http://airjd.com/res/html5.js"></script><![endif]-->
+    <style>body {
+        font: 300 14px/1.8 'Raleway', sans-serif;
+        color: #666;
+        overflow-x: hidden;
+    }
 
-        #loading .loading-container {
-            position: absolute;
-            margin: auto;
-            left: 0;
-            right: 0;
-            top: 30%;
-            bottom: 0
-        }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 
-        #loading b {
-            color: white;
-            background: #74b936;
-            font-weight: normal;
-            padding: 5px 5px;
-            margin: 10px;
-            font-size: 50px
-        }
+    a {
+        color: #E7746F;
+    }
 
-        #loading h1, #loading h2, #loading h3, #loading h4 {
-            font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
-            text-align: center
-        }
+    a:hover {
+        text-decoration: none;
+        color: #999;
+    }
 
-        #loading .reverse {
-            color: white !important;
-            background: #74b936 !important;
-            padding: 4px;
-            border-radius: 4px
-        }
+    .editpg .sticky-wrapper .header {
+        top: 60px !important;
+    }
 
-        #loading #loading-app-name {
+    .navbar a, .form-control {
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        -ms-transition: all 0.4s ease-in-out 0s;
+        -o-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+    }
+
+    a, .btn {
+        -webkit-transition: all 0.125s ease-in-out 0s;
+        -moz-transition: all 0.125s ease-in-out 0s;
+        -ms-transition: all 0.125s ease-in-out 0s;
+        -o-transition: all 0.125s ease-in-out 0s;
+        transition: all 0.125s ease-in-out 0s;
+    }
+
+    .btn, .form-control, .form-control:hover, .form-control:focus, .navbar-custom .dropdown-menu {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font: 700 40px/1.2 Raleway, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin: 5px 0 5px;
+        color: #222;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin: 0 0 30px;
+    }
+
+    h3 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin: 0 0 5px;
+    }
+
+    h4 {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    h5 {
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    h6 {
+        font-size: 11px;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    .btn, .iconbox, .progress, #filter li, .scroll-up a, .form-control, .input-group-addon {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .input-group .form-control {
+        z-index: auto;
+    }
+
+    .input-group-addon {
+        background: #D8E1E4;
+        border: 2px solid #D8E1E4;
+        padding: 6px 15px;
+        font-weight: 700;
+    }
+
+    .form-control {
+        background: #FFF;
+        border: 1px solid #D8E1E4;
+        font-size: 12px;
+        padding: 0 15px;
+    }
+
+    .form-control:focus {
+        border-color: rgba(135, 135, 135, 0.7);
+    }
+
+    .input-lg, .form-horizontal .form-group-lg .form-control {
+        height: 38px;
+        font-size: 13px;
+    }
+
+    .input-sm, .form-horizontal .form-group-sm .form-control {
+        font-size: 11px;
+        height: 30px;
+    }
+
+    textarea.form-control {
+        padding: 15px;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .btn {
+        font-family: Raleway, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 13px;
+        padding: 8px 26px;
+        border: 0;
+    }
+
+    .btn:hover, .btn:focus, .btn:active, .btn.active {
+        outline: inherit !important;
+    }
+
+    .btn-lg, .btn-group-lg > .btn {
+        padding: 10px 25px;
+        font-size: 13px;
+        background: rgba(17, 17, 17, 0.8);
+        color: #fff;
+    }
+
+    .btn-lg:hover, .btn-group-lg > .btn:hover {
+        background: rgba(17, 17, 17, 1.8);
+        color: #fff;
+    }
+
+    .btn-sm, .btn-group-sm > .btn {
+        padding: 6px 25px;
+        font-size: 11px;
+    }
+
+    .btn-xs, .btn-group-xs > .btn {
+        padding: 5px 25px;
+        font-size: 10px;
+    }
+
+    .btn .icon-before {
+        margin-right: 6px;
+    }
+
+    .btn .icon-after {
+        margin-left: 6px;
+    }
+
+    .pfblock {
+        padding: 120px 0 100px;
+    }
+
+    .pfblock-gray {
+        background: #f5f5f5;
+    }
+
+    .pfblock-image {
+        padding: 0;
+    }
+
+    .calltoaction h1, .calltoaction h2, .calltoaction h3, .calltoaction h4, .calltoaction h5, .calltoaction h6, .pfblock-image, .pfblock-image h1, .pfblock-image h2, .pfblock-image h3, .pfblock-image h4, .pfblock-image h5, .pfblock-image h6 {
+        color: #fff;
+    }
+
+    .pfblock-header {
+        text-align: center;
+        margin: 0 0 60px;
+    }
+
+    .pfblock-header-left {
+        text-align: left;
+    }
+
+    .pfblock-header-left .pfblock-line {
+        width: inherit;
+        margin: 30px 0;
+    }
+
+    .pfblock-title {
+        font-size: 36px;
+        font-weight: 800;
+    }
+
+    .pfblock-subtitle {
+        font-family: Raleway, "Times New Roman", Times, sans-serif;
+        font-style: normal;
+        font-size: 18px;
+    }
+
+    .pfblock-line {
+        background: rgba(135, 135, 135, 0.5);
+        width: 100px;
+        height: 1px;
+        margin: 30px auto;
+    }
+
+    .pfblock-icon {
+        font-size: 32px;
+    }
+
+    .calltoaction * {
+        text-align: center;
+    }
+
+    .calltoaction {
+        background: url(/res/images/item-3.jpg);
+        background-color: #222;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding: 50px 0;
+        color: #999;
+    }
+
+    .calltoaction h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .calltoaction-decription {
+        padding-top: 20px;
+        padding-bottom: 30px;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .calltoaction-btn {
+        text-align: center;
+    }
+
+    .calltoaction-btn > .btn {
+        background: rgba(255, 255, 255, .8);
+        color: #111;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .calltoaction-btn > .btn:hover {
+        background: #fff;
+    }
+
+    .long-down {
+        margin-bottom: 40px;
+    }
+
+    #home {
+        background: url(/res/images/cover.jpg);
+        background-color: #222;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding: 0;
+        position: relative;
+    }
+
+    .home-overlay {
+        background-color: rgba(44, 62, 80, 0.3);
+        background-image: url("/res/images/pattern.png");
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+    }
+
+    .intro {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        text-align: center;
+        -webkit-transform: translate(0%, -50%);
+        -moz-transform: translate(0%, -50%);
+        -ms-transform: translate(0%, -50%);
+        -o-transform: translate(0%, -50%);
+        transform: translate(0%, -50%);
+        padding: 0 15px;
+    }
+
+    .intro h1 {
+        font-weight: 800;
+    }
+
+    .start {
+        font-family: Raleway, "Times New Roman", Times, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        text-transform: none;
+        margin: 15px 0;
+    }
+
+    .iconbox {
+        background: #fff;
+        border-bottom: 1px solid #d4d4d4;
+        text-align: center;
+        padding: 40px 20px;
+        margin: 0 0 20px;
+    }
+
+    .iconbox-icon {
+        margin: 0 0 15px;
+        font-size: 32px;
+        color: #222;
+    }
+
+    .iconbox-title {
+        margin: 0 0 15px;
+        padding: 0;
+    }
+
+    .chart {
+        display: inline-block;
+        height: 140px;
+        margin: 50px 0;
+        position: relative;
+        text-align: center;
+        width: 140px;
+    }
+
+    .chart canvas {
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    .percent {
+        display: inline-block;
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 140px;
+        z-index: 2;
+    }
+
+    .percent:after {
+        content: "%";
+        font-size: 50%;
+        margin-left: 0.1em;
+    }
+
+    .ajax-response {
+        text-align: center;
+    }
+
+    #footer {
+        background: #222;
+        text-align: center;
+        padding: 40px 0;
+        color: #FFF;
+    }
+
+    .copyright {
+        margin: 0;
+    }
+
+    .copyright a {
+        border-bottom: 1px dotted #fff;
+    }
+
+    #footer span {
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        color: #ff5252;
+    }
+
+    .social-links {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px;
+    }
+
+    .social-links li {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .social-links a {
+        width: 36px;
+        height: 36px;
+        display: block;
+        line-height: 35px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, .1);
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, .2);
+    }
+
+    .social-links a:hover {
+        border: 1px solid rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .8);
+    }
+
+    .header {
+        border-bottom: 1px solid #f5f5f5;
+        position: relative;
+        width: 100%;
+        z-index: 998;
+    }
+
+    .navbar-custom {
+        border: 0;
+        border-radius: 0;
+        margin: 0;
+        text-transform: uppercase;
+        font-family: Raleway, sans-serif;
+    }
+
+    .navbar-custom, .navbar-custom .dropdown-menu {
+        background: #fff;
+        padding: 0;
+    }
+
+    .navbar-custom .navbar-brand, .navbar-custom .navbar-nav > li > a, .navbar-custom .navbar-nav .dropdown-menu > li > a {
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: #222;
+    }
+
+    .navbar-custom .nav li.active, .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus, .navbar-custom .navbar-nav > li.active a {
+        background: none;
+        outline: 0;
+        color: #E7746F;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-weight: 700;
+        font-size: 22px;
+        font-family: Lobster, cursive;
+    }
+
+    .navbar-custom .dropdown-menu {
+        border: 0;
+        border-top: 2px solid #E7746F;
+        border-radius: 0;
+    }
+
+    .navbar-custom .dropdown-menu > li > a {
+        padding: 10px 20px;
+    }
+
+    .navbar-custom .nav .open > a, .navbar-custom .dropdown-menu > li > a:hover, .navbar-custom .dropdown-menu > li > a:focus {
+        background: #f5f5f5;
+    }
+
+    .navbar-custom .navbar-toggle .icon-bar {
+        background: #222;
+    }
+
+    .scroll-up {
+        position: fixed;
+        display: none;
+        z-index: 999;
+        bottom: 2em;
+        right: 2em;
+    }
+
+    .scroll-up a {
+        background-color: rgba(135, 135, 135, 0.5);
+        display: block;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+    .scroll-up a:hover, .scroll-up a:active {
+        background-color: rgba(235, 235, 235, .8);
+        color: #e7746f;
+    }
+
+    .scroll-down {
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        margin-left: -15px;
+        display: block;
+        z-index: 10;
+        text-align: center;
+    }
+
+    .scroll-down span {
+        position: relative;
+        color: #fff;
+        -webkit-animation-name: drop;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-delay: 0s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+        animation-name: drop;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+    }
+
+    @-webkit-keyframes drop {
+        0% {
+            top: 0px;
+            opacity: 0;
+        }
+        30% {
+            top: 10px;
+            opacity: 1;
+        }
+        100% {
+            top: 25px;
+            opacity: 0;
+        }
+    }
+
+    @keyframes drop {
+        0% {
+            top: 0px;
+            opacity: 0;
+        }
+        30% {
+            top: 10px;
+            opacity: 1;
+        }
+        100% {
+            top: 25px;
+            opacity: 0;
+        }
+    }
+
+    #preloader {
+        background: #FFF;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 9999;
+    }
+
+    #status {
+        background-image: url(/res/images/preloader.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 200px;
+        left: 50%;
+        margin: -100px 0 0 -100px;
+        position: absolute;
+        top: 50%;
+        width: 200px;
+    }
+
+    @media (max-width: 767px) {
+        .calltoaction {
             text-align: center;
-            font-size: 54px;
-            margin-top: 0;
-            margin-bottom: .8em
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 34px;
+            letter-spacing: 3px;
         }
 
-        #loading #loading-slogan {
-            font-weight: normal
+        h2 {
+            font-size: 24px;
+            margin: 0 0 30px;
+            letter-spacing: 3px;
+        }
+    }
+
+    .grid {
+        position: relative;
+        clear: both;
+        margin: 0 auto;
+        padding: 1em 0 4em;
+        max-width: 100%;
+        list-style: none;
+        text-align: center;
+    }
+
+    .grid h2 {
+        font-size: 20px;
+    }
+
+    .grid figure {
+        position: relative;
+        float: left;
+        overflow: hidden;
+        margin: 10px 1%;
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+        background: #3085a3;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .grid figure img {
+        position: relative;
+        display: block;
+        min-height: 100%;
+        max-width: 100%;
+        opacity: 0.8;
+    }
+
+    .grid figure figcaption {
+        padding: 2em;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.25em;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .grid figure figcaption::before, .grid figure figcaption::after {
+        pointer-events: none;
+    }
+
+    .grid figure figcaption, .grid figure figcaption > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .grid figure figcaption > a {
+        z-index: 1000;
+        text-indent: 200%;
+        white-space: nowrap;
+        font-size: 0;
+        opacity: 0;
+    }
+
+    .grid figure h2 {
+        word-spacing: -0.15em;
+        font-weight: 300;
+    }
+
+    .grid figure h2 span {
+        font-weight: 800;
+    }
+
+    .grid figure h2, .grid figure p {
+        margin: 0;
+    }
+
+    .grid figure p {
+        letter-spacing: 1px;
+        font-size: 68.5%;
+    }
+
+    figure.effect-bubba {
+        background: #9e5406;
+    }
+
+    figure.effect-bubba img {
+        opacity: 0.7;
+        -webkit-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+    }
+
+    figure.effect-bubba:hover img {
+        opacity: 0.4;
+    }
+
+    figure.effect-bubba figcaption::before, figure.effect-bubba figcaption::after {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        bottom: 30px;
+        left: 30px;
+        content: '';
+        opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+    }
+
+    figure.effect-bubba figcaption::before {
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+    }
+
+    figure.effect-bubba figcaption::after {
+        border-right: 1px solid #fff;
+        border-left: 1px solid #fff;
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0);
+    }
+
+    figure.effect-bubba h2 {
+        padding-top: 10%;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+        color: #fff;
+    }
+
+    figure.effect-bubba p {
+        padding: 20px 2.5em;
+        opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: translate3d(0, 20px, 0);
+        transform: translate3d(0, 20px, 0);
+    }
+
+    figure.effect-bubba:hover figcaption::before, figure.effect-bubba:hover figcaption::after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    figure.effect-bubba:hover h2, figure.effect-bubba:hover p {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .cbp-qtrotator {
+        position: relative;
+        margin: 3em auto 0em auto;
+        max-width: 90%;
+        width: 90%;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent {
+        position: absolute;
+        min-height: 200px;
+        border-top: 1px solid #f4f4f4;
+        border-bottom: 1px solid #f4f4f4;
+        padding: 2em 0;
+        top: 0;
+        z-index: 0;
+        opacity: 0;
+        width: 100%;
+    }
+
+    .no-js .cbp-qtrotator .cbp-qtcontent {
+        border-bottom: none;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent.cbp-qtcurrent, .no-js .cbp-qtrotator .cbp-qtcontent {
+        position: relative;
+        z-index: 100;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent:before, .cbp-qtrotator .cbp-qtcontent:after {
+        content: " ";
+        display: table;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent:after {
+        clear: both;
+    }
+
+    .cbp-qtprogress {
+        position: absolute;
+        background: #FF5252;
+        height: 1px;
+        width: 0%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .cbp-qtrotator blockquote {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 12px;
+    }
+
+    .cbp-qtrotator blockquote p {
+        font-size: 2em;
+        color: #888;
+        font-weight: 300;
+        margin: 0.4em 0 1em;
+    }
+
+    .cbp-qtrotator blockquote footer {
+        font-size: 1.2em;
+    }
+
+    .cbp-qtrotator blockquote footer:before {
+        content: '― ';
+    }
+
+    .cbp-qtrotator .cbp-qtcontent img {
+        float: right;
+        margin-left: 3em;
+    }
+
+    @media screen and (max-width: 30.6em) {
+        .cbp-qtrotator {
+            font-size: 70%;
         }
 
-        #loading #loading-text {
-            margin: 80px auto;
-            text-align: center;
-            margin-bottom: 40px
+        .cbp-qtrotator img {
+            width: 80px;
         }
-
-        #loading-view-doc {
-            font-size: 16px;
-            margin: 10px auto
-        }
-
-        #loading #loading-view-doc a {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #74b936
-        }
-
-        #loading #loading-view-doc a:link, #loading #loading-view-doc a:hover, #loading #loading-view-doc a:active, #loading #loading-view-doc a:visited {
-            color: #74b936;
-            text-decoration: none
-        }
-    </style>
-
-    <style>
-        @keyframes move {
-            from {
-                transform: translate(0, 50%);
-            }
-            to {
-                transform: translate(0, 850%);
-            }
-        }
-
-        figure {
-            margin: 0 auto;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            position: relative;
-            background: #1c1c1c;
-        }
-
-        section {
-            width: 10%;
-            height: 100%;
-            position: absolute;
-            left: 45%;
-        }
-
-        section:nth-child(2) {
-            transform: rotate(22.5deg);
-        }
-
-        section:nth-child(3) {
-            transform: rotate(45deg);
-        }
-
-        section:nth-child(4) {
-            transform: rotate(67.5deg);
-        }
-
-        figure div {
-            height: 10%;
-            border-radius: 50%;
-            background: dodgerblue;
-            animation: move 1s ease-in-out infinite alternate;
-        }
-
-        figure:nth-child(1) > section:nth-child(1) > div {
-            animation-delay: -0.1875s;
-        }
-
-        figure:nth-child(1) > section:nth-child(2) > div {
-            animation-delay: -0.15s;
-        }
-
-        figure:nth-child(1) > section:nth-child(3) > div {
-            animation-delay: -0.9375s;
-        }
-
-    </style>
+    }</style>
 </head>
-<body>
-<div id="loading">
-    <div class='loading-container'>
-        <h1 id='loading-app-name'>CYAN BLUE</h1>
+<body >
 
-        <h3><span id='loading-slogan'>加油中</span></h3>
 
-        <p id='loading-text'>
-            <figure>
-                <section>
-                    <div></div>
-                </section>
-                <section>
-                    <div></div>
-                </section>
-                <section>
-                    <div></div>
-                </section>
-                <section>
-                    <div></div>
-                </section>
-                <section>
-                    <div></div>
-                </section>
-                <section>
-                    <div></div>
-                </section>
-                <section>
-                    <div></div>
-                </section>
-            </figure>
-        </p>
+<div id="toolbar-text" class="tool-container">
+    <div class="tool-items">
+        <div class="btn-format tool-item gradient btn-group">
+            <button type="button" class="btn btn-text" data-cmd="P">文本</button>
+            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <button data-cmd="P">文本</button>
+                </li>
+                <li>
+                    <button data-cmd="H1">标题 1</button>
+                </li>
+                <li>
+                    <button data-cmd="H2">标题 2</button>
+                </li>
+                <li>
+                    <button data-cmd="H3">标题 3</button>
+                </li>
+                <li>
+                    <button data-cmd="H4">标题 4</button>
+                </li>
+                <li>
+                    <button data-cmd="H5">标题 5</button>
+                </li>
+                <li>
+                    <button data-cmd="H6">标题 6</button>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <button data-cmd="BLOCKQUOTE">引用</button>
+                </li>
+                <li>
+                    <button data-cmd="PRE">代码</button>
+                </li>
+                <li>
+                    <button data-cmd="ADDRESS">地址</button>
+                </li>
+            </ul>
+        </div>
+        <button class="btn-bold" title="加粗"><b>B</b></button>
+        <button class="btn-italic" title="斜体"><i><b>I</b></i></button>
+        <button class="btn-underline" title="下划线"><u><b>U</b></u></button>
+        <button class="btn-strike" title="中划线"><strike>S</strike></button>
+        <div class="btn-color tool-item gradient" title="字体颜色"><input class="color" readonly="readonly" value="A"></div>
+        <div class="btn-color-back tool-item gradient" title="字体背景"><input class="color" readonly="readonly" value=""
+                                                                           autocomplete="off"></div>
+        <button class="btn-clear" title="删除格式"><i class="ai-brush"></i></button>
+        <div class="btn-font-size tool-item gradient" title="字体大小"><input class="font-size" readonly="readonly"
+                                                                          value="12">
 
-        <p id='loading-view-doc'><a
-                href="http://cyan-blue.github.io/"
-                target='_blank'>看看博客去</a></p>
+            <div class="font-range-wrapper">
+                <div class="font-range"></div>
+                <button class="btn-font-remove tool-item"><i class="ai-remove"></i></button>
+            </div>
+        </div>
+        <button class="btn-list" title="列表"><i class="ai-list"></i></button>
+        <button class="btn-list-order" title="有序列表"><i class="ai-order-list"></i></button>
+        <button class="btn-anchor" title="插入链接"><i class="ai-globe"></i></button>
+        <button class="btn-left" title="居左对齐"><i class="ai-align-left"></i></button>
+        <button class="btn-center" title="居中对齐"><i class="ai-align-center"></i></button>
+        <button class="btn-right" title="居右对齐"><i class="ai-align-right"></i></button>
+        <button class="btn-del" title="删除元素"><i class="ai-trash"></i></button>
+        <div class="tool-anchor"><input value="" placeholder="http://你的链接地址">
+            <button class="btn-cancel" title="返回"><i class="ai-remove"></i></button>
+            <button class="btn-ok" title="工具栏"><i class="ai-ok"></i></button>
+        </div>
     </div>
 </div>
+<div id="toolbar-image" class="tool-container">
+    <div class="tool-items">
+        <div class="btn-label tool-item gradient">
+            <button type="button" class="btn btn-text" data-cmd="P">背景</button>
+        </div>
+        <div class="btn-bg-color tool-item gradient" title="背景颜色"><input class="color" readonly="readonly" value=""
+                                                                         autocomplete="off"></div>
+        <div class="tool-url" title="图片地址"><input value="" placeholder="http://你的图片网址"></div>
+        <div class="btn-upload tool-item gradient" title="上传图片">
+            <form action="http://sc1.airjd.com/svr/upload.image" method="post" enctype="multipart/form-data"><i
+                    class="ai-plus"></i> <input type="file" name="file" class="upload"></form>
+        </div>
+        <button class="btn-url-remove" title="删除图片"><i class="ai-remove"></i></button>
+        <button class="btn-url-ok" title="更改图片"><i class="ai-ok"></i></button>
+        <button class="btn-del" title="删除元素"><i class="ai-trash"></i></button>
+    </div>
+</div>
+
+<div id="airWrap">
+    <section id="home" class="pfblock-image screen-height design-content content-image content-background">
+        <div class="home-overlay"></div>
+        <div class="intro design-content content-text">
+            <div class="start">您好, 我是****，我是一名</div>
+            <h1>全栈Web开发工程师</h1>
+
+            <div class="start">设计制作现代的响应式网页</div>
+        </div>
+        <a href="#services">
+            <div class="scroll-down"><span> <i class="fa fa-angle-down fa-2x"></i> </span></div>
+        </a></section>
+    <header class="header">
+        <nav class="navbar navbar-custom design-content content-image content-background" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand design-content content-text" href="#home">Your Name</a></div>
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="design-content content-text" href="#home">Home</a></li>
+                        <li><a class="design-content content-text" href="#services">Services</a></li>
+                        <li><a class="design-content content-text" href="#portfolio">Works</a></li>
+                        <li><a class="design-content content-text" href="#skills">Skills</a></li>
+                        <li><a class="design-content content-text" href="#testimonials">Testimonials</a></li>
+                        <li><a class="design-content content-text" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- .container --></nav>
+    </header>
+    <section id="services" class="pfblock pfblock-gray design-content content-image content-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="pfblock-header wow fadeInUp design-content content-text">
+                        <div class="pfblock-title design-content content-text">我能做什么？</div>
+                        <div class="pfblock-line design-content content-text"></div>
+                        <div class="pfblock-subtitle design-content content-text">No one lights a lamp in order to hide
+                            it behind the door: the purpose of light is to create more light, to open people’s eyes, to
+                            reveal the marvels around.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="iconbox wow slideInLeft design-content content-text">
+                        <div class="iconbox-icon"><span class="icon-magic-wand"></span></div>
+                        <div class="iconbox-text">
+                            <div class="iconbox-title design-content content-text">Web Design</div>
+                            <div class="iconbox-desc design-content content-text">Good things come to those who wait,
+                                but only the things left by those who hustle
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="iconbox wow slideInLeft design-content content-text">
+                        <div class="iconbox-icon"><span class="icon-puzzle"></span></div>
+                        <div class="iconbox-text">
+                            <div class="iconbox-title design-content content-text">Web Programming</div>
+                            <div class="iconbox-desc design-content content-text">Good things come to those who wait,
+                                but only the things left by those who hustle
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="iconbox wow slideInRight design-content content-text">
+                        <div class="iconbox-icon"><span class="icon-badge"></span></div>
+                        <div class="iconbox-text">
+                            <div class="iconbox-title design-content content-text">Branding</div>
+                            <div class="iconbox-desc design-content content-text">Good things come to those who wait,
+                                but only the things left by those who hustle
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="iconbox wow slideInRight design-content content-text">
+                        <div class="iconbox-icon"><span class="icon-question"></span></div>
+                        <div class="iconbox-text">
+                            <div class="iconbox-title design-content content-text">Consultation</div>
+                            <div class="iconbox-desc design-content content-text">Good things come to those who wait,
+                                but only the things left by those who hustle
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .row --></div>
+        <!-- .container --></section>
+    <section id="portfolio" class="pfblock  design-content content-image content-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="pfblock-header wow fadeInUp design-content content-text">
+                        <div class="pfblock-title design-content content-text">我的作品</div>
+                        <div class="pfblock-line design-content content-text"></div>
+                        <div class="pfblock-subtitle design-content content-text">No one lights a lamp in order to hide
+                            it behind the door: the purpose of light is to create more light, to open people’s eyes, to
+                            reveal the marvels around.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba design-content content-text"><img src=""
+                                                                                      alt="img01"
+                                                                                      class="design-content content-image"/>
+                            <figcaption class="design-content content-text"><h2>Crazy <span>Shark</span></h2>
+
+                                <p>Lily likes to play with crayons and pencils</p></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba design-content content-text"><img src=""
+                                                                                      alt="img01"
+                                                                                      class="design-content content-image"/>
+                            <figcaption class="design-content content-text"><h2>Funny <span>Tortoise</span></h2>
+
+                                <p>Lily likes to play with crayons and pencils</p></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba design-content content-text"><img src=""
+                                                                                      alt="img01"
+                                                                                      class="design-content content-image"/>
+                            <figcaption class="design-content content-text"><h2>The <span>Hat</span></h2>
+
+                                <p>Lily likes to play with crayons and pencils</p></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba design-content content-text"><img src=""
+                                                                                      alt="img01"
+                                                                                      class="design-content content-image"/>
+                            <figcaption class="design-content content-text"><h2>Bang <span>Bang</span></h2>
+
+                                <p>Lily likes to play with crayons and pencils</p></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba design-content content-text"><img src=""
+                                                                                      alt="img01"
+                                                                                      class="design-content content-image"/>
+                            <figcaption class="design-content content-text"><h2>Crypton <span>Dude</span></h2>
+
+                                <p>Lily likes to play with crayons and pencils</p></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="grid wow zoomIn">
+                        <figure class="effect-bubba design-content content-text"><img src=""
+                                                                                      alt="img01"
+                                                                                      class="design-content content-image"/>
+                            <figcaption class="design-content content-text"><h2>Don't <span>Poke</span></h2>
+
+                                <p>Lily likes to play with crayons and pencils</p></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .contaier --></section>
+    <section class="pfblock pfblock-gray  design-content content-image content-background" id="skills">
+        <div class="container">
+            <div class="row skills">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="pfblock-header wow fadeInUp design-content content-text">
+                            <div class="pfblock-title design-content content-text">我的技能</div>
+                            <div class="pfblock-line design-content content-text"></div>
+                            <div class="pfblock-subtitle design-content content-text"> No one lights a lamp in order to
+                                hide it behind the door: the purpose of light is to create more light, to open people’s
+                                eyes, to reveal the marvels around.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .row -->
+                <div class="col-sm-6 col-md-3 text-center">
+                    <div data-percent="80" class="chart easyPieChart design-content content-text"
+                         style="width: 140px; height: 140px; line-height: 140px;">
+                        <div class="percent">80</div>
+                    </div>
+                    <div class="text-center design-content content-text">Programming</div>
+                </div>
+                <div class="col-sm-6 col-md-3 text-center">
+                    <div data-percent="90" class="chart easyPieChart design-content content-text"
+                         style="width: 140px; height: 140px; line-height: 140px;">
+                        <div class="percent">90</div>
+                    </div>
+                    <div class="text-center design-content content-text">Design</div>
+                </div>
+                <div class="col-sm-6 col-md-3 text-center">
+                    <div data-percent="85" class="chart easyPieChart design-content content-text"
+                         style="width: 140px; height: 140px; line-height: 140px;">
+                        <div class="percent">85</div>
+                    </div>
+                    <div class="text-center design-content content-text">Marketing</div>
+                </div>
+                <div class="col-sm-6 col-md-3 text-center">
+                    <div data-percent="95" class="chart easyPieChart design-content content-text"
+                         style="width: 140px; height: 140px; line-height: 140px;">
+                        <div class="percent">95</div>
+                    </div>
+                    <div class="text-center design-content content-text">UI / UX</div>
+                </div>
+            </div>
+            <!--End row --></div>
+    </section>
+    <section class="calltoaction  design-content content-image content-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12"><h2 class="wow slideInRight design-content content-text"
+                                                     data-wow-delay=".1s">ARE YOU READY TO START?</h2>
+
+                    <div class="calltoaction-decription wow slideInRight design-content content-text"
+                         data-wow-delay=".2s">I'm available for freelance projects.
+                    </div>
+                </div>
+            </div>
+            <!-- .row --></div>
+        <!-- .container --></section>
+    <section id="testimonials" class="pfblock pfblock-gray  design-content content-image content-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="pfblock-header wow fadeInUp">
+                        <div class="pfblock-title design-content content-text">客户们怎么说</div>
+                        <div class="pfblock-line design-content content-text"></div>
+                        <div class="pfblock-subtitle design-content content-text">No one lights a lamp in order to hide
+                            it behind the door: the purpose of light is to create more light, to open people’s eyes, to
+                            reveal the marvels around.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .row -->
+            <div class="row">
+                <div id="cbp-qtrotator" class="cbp-qtrotator">
+                    <div class="cbp-qtcontent"><img src="/res/images/client-1.jpg" alt="client-1"
+                                                    class="design-content content-image"/>
+                        <blockquote class="design-content content-text"><p>Work with John was a pleasure. He understood
+                            exactly what I wanted and created an awesome site for my company.</p>
+                            <footer>Pino Caruso</footer>
+                        </blockquote>
+                    </div>
+                    <div class="cbp-qtcontent"><img src="/res/images/client-2.jpg" alt="client-2"
+                                                    class="design-content content-image"/>
+                        <blockquote class="design-content content-text"><p>I'm really happy with the results. Get 100%
+                            satisfaction is difficult but Alex got it without problems.</p>
+                            <footer>Jane Doe</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <!-- .row --></div>
+        <!-- .row --></section>
+    <section id="contact" class="pfblock  design-content content-image content-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="pfblock-header">
+                        <div class="pfblock-title design-content content-text">给我发消息</div>
+                        <div class="pfblock-line design-content content-text"></div>
+                        <div class="pfblock-subtitle design-content content-text">No one lights a lamp in order to hide
+                            it behind the door: the purpose of light is to create more light, to open people’s eyes, to
+                            reveal the marvels around.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- .row -->
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <form id="contact-form" role="form" class="slide-form design-content content-text" method="post"
+                          action="http://airjd.com/form.page/add">
+                        <div class="ajax-hidden">
+                            <div class="form-group wow fadeInUp"><label class="sr-only" for="c_name">称呼</label><input
+                                    type="text" id="c_name" class="form-control" name="c_name" placeholder="称呼"></div>
+                            <div class="form-group wow fadeInUp" data-wow-delay=".1s"><label class="sr-only"
+                                                                                             for="c_email">邮箱</label><input
+                                    type="email" id="c_email" class="form-control" name="c_email" placeholder="邮箱">
+                            </div>
+                            <div class="form-group wow fadeInUp" data-wow-delay=".2s"><textarea class="form-control"
+                                                                                                id="message"
+                                                                                                name="message" rows="7"
+                                                                                                placeholder="消息"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">发送消息
+                            </button>
+                        </div>
+                        <input type="hidden" name="_user" value="undefined">
+
+                        <div class="ajax-response"></div>
+                    </form>
+                </div>
+            </div>
+            <!-- .row --></div>
+        <!-- .container --></section>
+    <footer id="footer" class=" design-content content-image content-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="social-links">
+                        <li class="design-content content-text"><a href="index.html#" class="wow fadeInUp"><i
+                                class="fa fa-facebook"></i></a></li>
+                        <li class="design-content content-text"><a href="index.html#" class="wow fadeInUp"
+                                                                   data-wow-delay=".1s"><i
+                                class="fa fa-twitter"></i></a></li>
+                        <li class="design-content content-text"><a href="index.html#" class="wow fadeInUp"
+                                                                   data-wow-delay=".2s"><i
+                                class="fa fa-google-plus"></i></a></li>
+                        <li class="design-content content-text"><a href="index.html#" class="wow fadeInUp"
+                                                                   data-wow-delay=".4s"><i class="fa fa-pinterest"></i></a>
+                        </li>
+                        <li class="design-content content-text"><a href="index.html#" class="wow fadeInUp"
+                                                                   data-wow-delay=".5s"><i
+                                class="fa fa-envelope"></i></a></li>
+                    </ul>
+                    <p class="heart"> Powered by <span class="fa fa-heart fa-2x animated pulse"></span> <a
+                            href="http://web.airjd.com">AirJD</a></p>
+
+                    <div class="copyright design-content content-text"> © 2015 John Doe | Images: <a
+                            href="https://unsplash.com/">Unsplash</a> & <a href="http://zoomwalls.com/">Zoomwalls</a>
+                    </div>
+                </div>
+            </div>
+            <!-- .row --></div>
+        <!-- .container --></footer>
+</div>
+<div class="scroll-up"><a href="#home"><i class="fa fa-angle-up"></i></a></div>
+<script type="text/javascript" src="http://airjd.com/res/editor_20150711.js"></script>
+<script src="http://airjd.com/res/modernizr.custom.js"></script>
+<script src="http://airjd.com/res/jquery.parallax-1.1.3.js"></script>
+<script src="http://airjd.com/res/imagesloaded.pkgd.js"></script>
+<script src="http://airjd.com/res/jquery.sticky.js"></script>
+<script src="http://airjd.com/res/smoothscroll.js"></script>
+<script src="http://airjd.com/res/wow.min.js"></script>
+<script src="http://airjd.com/res/jquery.easypiechart.js"></script>
+<script src="http://airjd.com/res/waypoints.min.js"></script>
+<script src="http://airjd.com/res/jquery.cbpQTRotator.js"></script>
+<script>$(function () {
+    $(window).load(function () {
+        $('#status').fadeOut();
+        $('#preloader').delay(300).fadeOut('slow');
+    });
+    $(document).ready(function () {
+        $('a[href*=#]').bind("click", function (e) {
+            if ($('body.editpg').size() > 0) {
+                e.preventDefault();
+                return
+            }
+            var anchor = $(this);
+            $('html, body').stop().animate({scrollTop: $(anchor.attr('href')).offset().top}, 1000);
+            e.preventDefault();
+        });
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scroll-up').fadeIn();
+            } else {
+                $('.scroll-up').fadeOut();
+            }
+        });
+        $('.header').sticky({topSpacing: 0});
+        $('body').scrollspy({target: '.navbar-custom', offset: 70});
+        $('.skills').waypoint(function () {
+            $('.chart').each(function () {
+                $(this).easyPieChart({
+                    size: 140,
+                    animate: 2000,
+                    lineCap: 'butt',
+                    scaleColor: false,
+                    barColor: '#FF5252',
+                    trackColor: 'transparent',
+                    lineWidth: 10
+                });
+            });
+        }, {offset: '80%'});
+        $(function () {
+            $('#cbp-qtrotator').cbpQTRotator();
+        });
+        $(".screen-height").height($(window).height());
+        $(window).resize(function () {
+            $(".screen-height").height($(window).height());
+        });
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            $('#home').css({'background-attachment': 'scroll'});
+        } else {
+            $('#home').parallax('50%', 0.1);
+        }
+        ;
+        var wow = new WOW({mobile: false});
+        wow.init();
+    });
+});</script>
 </body>
+</html>
