@@ -12,7 +12,7 @@
     },
     initLeftMenu: function(callback) {
         var self = this;
-        $.getJSON("../../../category.json", function(data) {
+        $.getJSON("../category.json", function(data) {
             $.each(data, function(index, val) {
                 var date = Date.parse(val.date);
                 var tag = '';
