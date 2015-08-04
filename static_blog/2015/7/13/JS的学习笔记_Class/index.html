@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JS学习笔记——Class</title>
+  <!-- Styles -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="css/github-markdown.min.css">-->
+  <!--   <link rel="stylesheet" href="/css/default.min.css">-->  
+  <script src="/js/pace.js"></script>
+  <link href="/css/pace-theme-flash.min.css" rel="stylesheet">
+</head>
+
+<body class=" pace-done">
+  <div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="-webkit-transform: translate3d(100%, 0px, 0px); transform: translate3d(100%, 0px, 0px);">
+      <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+  </div>
+  <div class="button-container" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+  <div class="overlay" id="overlay">
+    <nav class="overlay-menu">
+      <div class="search-div">
+        <!-- <input type="text" class="form-control search" placeholder="Search"> -->
+        <div class="search-container">
+          <span class="icon glyphicon glyphicon-search" aria-hidden="true"></span>
+          <input class="search" placeholder="Search">
+        </div>
+      </div>
+      <div class="ul-div " onmousewheel="return scroll(event,this)">
+        <ul>
+        </ul>
+      </div>
+      <div class="footer">Copyright© 2015 hanxv</div>
+    </nav>
+  </div>
+  <div class="main-content">
+    <!-- header里面属性： container-fluid  流布局    uppercase：全部大写
+      第一个div xs和md和sm 确认在大小屏幕的宽度  offset设置偏移-->
+    <div class="row">
+      <header class="container-fluid">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-2">
+          <div class="blog-title-div">
+            <h1 id="" class="blog-title">JS学习笔记——Class</h1>
+          </div>
+          <div class="blog-info-div">
+            <span class="blog-time">Jul 13, 2015 / </span>
+            <div class="blog-tag">
+               
+              <a class="tagnode" href="#">javascript</a> , 
+              <a class="tagnode" href="#">class</a> , 
+              <a class="tagnode" href="#">note</a>  
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid content-div content">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-2 scrollspy-example  markdown-body" data-spy="scroll" data-target="#right-menu-nav" data-offset="0">
+          <article class="markdown-body"><h2>实现</h2><pre><code class="javascript">// 这是 Range 类的构造函数，用来初始化 Range Object ；
+// 构造函数的名字即指明类的名字；
+// 其中 from 和 to 为构造函数所需的参数；
+// 注意：不需要返回对象，仅仅是用来初始化
+function Range(from, to) {
+    // this 指代当前对象，即通过 new Range(...) 创建的对象；
+    // from 是对象的中的一个变量，且不与其他对象共享；
+    // 与 Java 中的实例变量相似
+    this.from = from;
+    this.to = to;
+}
+
+// 所有的 Range Object 都继承这个对象
+// 注意：这个变量名必须为 prototype
+Range.prototype.includes = function(x) {
+    return this.from &lt;= x &amp;&amp; x &lt;= this.to;
+};
+Range.prototype.foreach = function(func) {
+    for (var i = Math.ceil(this.from); i &lt; this.to; x++) func(x);
+};
+Range.prototype.toString = function() {
+    return &#34;(&#34; + this.from + &#34;...&#34; + this.to + &#34;)&#34;;
+};
+// 新建一个 Range 对象
+var r = new Range(1, 3);
+r.include(2) // =&gt; true
+r.foreach(console.log) // =&gt; 1 2 3
+console.log(r) // =&gt; (1...3)</code></pre><p>虽然关于类的基本的解释已经写在代码注释里面了，但是还有很多细节没有展示。下面就来说说细节的地方</p><h2>prototype</h2><p>任何JavaScript的函数能被用来作为构造函数。因此函数（除了ECMAScript 5 Function.bind()方法返回的函数）都会有一个<code>prototype</code>变量。并且这个<code>prototype</code>变量还有一个不可以枚举的<code>constructor</code>变量。<code>constructor</code>变量即该函数。</p><pre><code class="javascript">var F = function() {};
+F.prototype.constructor === F; // =&gt; true
+
+//对象继承prototype，所以对象的constructor===F
+var o = new F();
+o.constructor === F // =&gt;true</code></pre><p>因为<code>prototype</code>自带<code>constructor</code>，所以我们往往不会用下面这种方式来设置类的方法</p><pre><code class="javascript">Range.prototype = {
+    includes: function(x) {
+        return this.from &lt;= x &amp;&amp; x &lt;= this.to;
+    },
+    foreach: function(func) {
+        for (var i = Math.ceil(this.from); i &lt; this.to; x++) func(x);
+    },
+    toString: function() {
+        return &#34;(&#34; + this.from + &#34;...&#34; + this.to + &#34;)&#34;;
+    }
+}</code></pre><p>这样会覆盖掉<code>prototype</code>自带的<code>constructor</code>方法，虽然可以通过添加<code>constructor: Range</code>来弥补</p><h2>实例变量、类变量、实例方法和类方法的比较</h2><p>顾名思义，实例变量和实例方法是针对于对象，是通过new关键字以类为模板创建出来的对象，类对象和类方法是针对于类：</p><ul><li><p>实例变量（Instace fields）：维持着单独一个对象的状态，每个对象都拥有单独的一份实例变量，改变其中一个对象的实例变量并不会影响其他对象的实例变量的值</p></li><li><p>类变量（Class fields）：是与类所绑定，为所有以该类为模板创建的对象共有的变量。每个类有且仅有一份；类似于Java当中的静态变量</p></li><li><p>实例方法（Instance methods）：与实例变量同理；能通过this关键字访问对象中的实例变量</p></li><li><p>类方法（Class methods）：与类变量同理；类似于Java的静态方法</p></li></ul><pre><code class="javascript">function Complex(real, imaginary) {
+    // 实例变量
+    this.r = real;
+    this.i = imaginary;
+}
+
+// 实例方法
+Complex.prototype.add = function(that) {};
+
+// 类变量；变量名全大写暗示该变量为常量
+Complex.ZERO = new Complex(0, 0);
+
+// 类方法
+Complex.parse = function(s) {};
+
+// 类变量；变量名开头为下划线暗示该变量为私有变量
+Complex._format = /^\{([^,]+),([^}]+)\}$/;</code></pre><p><strong>Note</strong>：javascript的prototype继承机制是动态的：当一个对象继承prototype，即使之后prototype发生改变，改对象也会相应改变。</p><pre><code class="javascript">function A(){}
+var a = new A();
+a.print() // Uncaught TypeError: a.c is not a function
+A.prototype.print = function() { 
+    console.log(&#34;prototype change&#34;); // prototype change
+}</code></pre><h2>new关键字</h2><p>当使用<code>new Range(1,3)</code>来创建对象时，1）新的Range对象被创建；2）调用构造函数初始化对象，其中this指代Range对象</p><h2>Abstract Class</h2><p>抽象函数需要两点：1）不能调用构造函数；2）有未实现的方法</p><pre><code class="javascript">function AbstractClass(){
+    throw new Error(&#34;Can&#39;t instantiate abstract classes&#34;);
+}
+
+AbstractClass.prototype.abstractMethod=function(){
+  throw new Error(&#34;abstract method&#34;);  
+};</code></pre></article>
+        </div>
+        <div class="col-md-2 col-md-offset-9 right-menu" id="right-menu">
+          <nav class=" hidden-print hidden-xs hidden-sm  right-menu-nav " role="navigation" id="right-menu-nav">
+            <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+              <ul class="nav bs-docs-sidenav right-menu-ul"></ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div id="disqus_thread" class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-2"></div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="/css/perfect-scrollbar.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <script src="/js/pangu.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <!-- Javascript -->
+  <script id="init" type="text/javascript">
+    var category = false;
+
+    pangu.page_spacing();
+
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'superhx';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/date-en-US.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="/js/noframework.waypoints.min.js"></script>
+  <script src="/js/perfect-scrollbar.jquery.js"></script>
+  <script src="/js/article.js"></script>
+</body>
+
+</html>

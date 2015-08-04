@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JS学习笔记——面向对象之继承</title>
+  <!-- Styles -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="css/github-markdown.min.css">-->
+  <!--   <link rel="stylesheet" href="/css/default.min.css">-->  
+  <script src="/js/pace.js"></script>
+  <link href="/css/pace-theme-flash.min.css" rel="stylesheet">
+</head>
+
+<body class=" pace-done">
+  <div class="pace  pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99" style="-webkit-transform: translate3d(100%, 0px, 0px); transform: translate3d(100%, 0px, 0px);">
+      <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+  </div>
+  <div class="button-container" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+  <div class="overlay" id="overlay">
+    <nav class="overlay-menu">
+      <div class="search-div">
+        <!-- <input type="text" class="form-control search" placeholder="Search"> -->
+        <div class="search-container">
+          <span class="icon glyphicon glyphicon-search" aria-hidden="true"></span>
+          <input class="search" placeholder="Search">
+        </div>
+      </div>
+      <div class="ul-div " onmousewheel="return scroll(event,this)">
+        <ul>
+        </ul>
+      </div>
+      <div class="footer">Copyright© 2015 hanxv</div>
+    </nav>
+  </div>
+  <div class="main-content">
+    <!-- header里面属性： container-fluid  流布局    uppercase：全部大写
+      第一个div xs和md和sm 确认在大小屏幕的宽度  offset设置偏移-->
+    <div class="row">
+      <header class="container-fluid">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-2">
+          <div class="blog-title-div">
+            <h1 id="" class="blog-title">JS学习笔记——面向对象之继承</h1>
+          </div>
+          <div class="blog-info-div">
+            <span class="blog-time">Jul 19, 2015 / </span>
+            <div class="blog-tag">
+               
+              <a class="tagnode" href="#">javascript</a> , 
+              <a class="tagnode" href="#">note</a> , 
+              <a class="tagnode" href="#">object-oriented</a>  
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid content-div content">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-2 scrollspy-example  markdown-body" data-spy="scroll" data-target="#right-menu-nav" data-offset="0">
+          <article class="markdown-body"><h2>实现</h2><p>javascript没有像java、python之类的语言提供extend继承机制，只能自己模拟来实现继承。</p><p>三个和继承相关的函数</p><pre><code class="javascript">function inherit(p) {
+    if (p == null) throw TypeError();
+    if (Object.create) return Object.create(p);
+    var t = typeof p;
+    if (t !== &#39;object&#39; &amp;&amp; t !== &#39;function&#39;) throw TypeError();
+    function f() {};
+    f.prototype = p;
+    return new f();
+}
+
+function extend(target,source){
+	for(prop in source){
+		target[prop]=source[prop];
+	}
+	return target;
+}
+
+Function.prototype.extend=function(constructor,methods,statics){
+	constructor.prototype=inherit(this.prototype);
+	constructor.prototype.constructor=constructor;
+	if(methods) extend(constructor.prototype,methods);
+	if(statics) extend(constructor,statics);
+	return constructor;
+}</code></pre><p>Animal,Cat继承示例</p><pre><code class="javascript">var Animal = (function() {
+    function Animal() {}
+    Animal.prototype.walk = function() {
+        return &#39;Move&#39;;
+    };
+    Animal.prototype.talk = function() {
+        return &#39;talk&#39;
+    }
+    return Animal;
+}());
+
+
+
+var Cat = (function() {
+    var superclass = Animal;
+    return superclass.extend(function() {}, {
+        talk: function() {
+            return Animal.prototype.talk.apply(this) + &#34; Meow!&#34;;
+        }
+    });
+}());
+
+var animal=new Cat();
+console.log(animal.walk()); // =&gt; Move
+console.log(animal.talk()); // =&gt; talk Meow!</code></pre><h2>思考</h2><p>说到面向对象，必不可少的要提到<a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming" title="">继承</a>)。在我个人看来继承有两个作用：</p><h3>多态</h3><p>以父类的标识符来申明一个变量，而该变量具体赋予的值是父类对象或者子类对象，从而得到相应不同的表现。下面一段java代码展示Cat和Dog分别继承Animal。当赋予<code>animal</code>变量Cat和Dog对象时，输出不同的叫声</p><pre><code class="java">abstract class Animal {
+    abstract String talk();
+}
+
+
+class Cat extends Animal {
+    String talk() {
+        return &#34;Meow!&#34;;
+    }
+}
+
+
+class Dog extends Animal {
+    String talk() {
+        return &#34;Woof!&#34;;
+    }
+}
+
+
+public class Test {
+    static void hear(Animal a) {
+        println(a.talk());
+    }
+
+    public static void main(String[] args) {
+        Animal animal;
+        animal = new Cat();
+        hear(animal);  // =&gt; Meow!
+        animal = new Dog();
+        hear(animal);  // =&gt; Woof!
+    }
+}</code></pre><p>但是由于javascript是弱类型语言，申明变量的时候不需要指定变量的类型，不使用继承也可以实现多态相应的功能，例如</p><pre><code class="javascript">var Cat = (function() {
+    function Cat() {}
+    Cat.prototype.talk = function() {
+        return &#34;Meow!&#34;;
+    };
+    return Cat;
+}());
+
+var Dog = (function() {
+    function Dog() {}
+    Dog.prototype.talk = function() {
+        return &#34;Woof!&#34;;
+    };
+    return Dog;
+}());
+
+var animal = new Cat();
+console.log(animal.talk()); // =&gt; Meow!
+animal= new Dog();
+console.log(animal.talk()); // =&gt; Woof!</code></pre><p>既然这样那为什么还要使用继承来实现多态呢？</p><p>使用继承来实现多态是为了表明Cat和Dog都基于Animal，有共同的行为talk()。因此当得到<code>animal</code>变量时，可以通过<code>instanceof</code>来判断<code>animal</code>所指对象是否继承<code>Animal.prototype</code>，从而决定该对象是否有talk()方法。而不需要分别判断是否为为Cat或者Dog。</p><h3>复用</h3><p>复用感觉就不用多说了，和其他语言差不多(╯3╰)</p></article>
+        </div>
+        <div class="col-md-2 col-md-offset-9 right-menu" id="right-menu">
+          <nav class=" hidden-print hidden-xs hidden-sm  right-menu-nav " role="navigation" id="right-menu-nav">
+            <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+              <ul class="nav bs-docs-sidenav right-menu-ul"></ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div id="disqus_thread" class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-2"></div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="/css/perfect-scrollbar.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <script src="/js/pangu.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <!-- Javascript -->
+  <script id="init" type="text/javascript">
+    var category = false;
+
+    pangu.page_spacing();
+
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'superhx';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="/js/date-en-US.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="/js/noframework.waypoints.min.js"></script>
+  <script src="/js/perfect-scrollbar.jquery.js"></script>
+  <script src="/js/article.js"></script>
+</body>
+
+</html>
