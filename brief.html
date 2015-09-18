@@ -1,1 +1,48 @@
-http://sc1.airjd.com/tmpl/site_clean
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Transition</title>
+    <link href="http://cdn.bootcss.com/select2/3.5.2/select2.min.css" rel="stylesheet"/>
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /*.testimg {*/
+        /*transform: translateX(200px);*/
+        /*-ms-transform: translateX(200px); *//* IE 9 */
+        /*-moz-transform: translateX(200px); *//* Firefox */
+        /*-webkit-transform: translateX(200px); *//* Safari 和 Chrome */
+        /*-o-transform: translateX(200px); *//* Opera */
+        /*}*/
+
+        .testimg {
+            width: 200px;
+            transition: width 2s, height 2s;
+            -moz-transition: width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+            -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+            -o-transition: width 2s, height 2s, -o-transform 2s; /* Opera */
+
+        }
+
+        .testimg:hover {
+            transform: rotate(360deg);
+            -moz-transform: rotate(360deg); /* Firefox 4 */
+            -webkit-transform: rotate(360deg); /* Safari and Chrome */
+            -o-transform: rotate(360deg); /* Opera */
+        }
+    </style>
+
+</head>
+<body>
+<div class="container" style="margin: 300px 0 0 500px">
+    <div class="row testimg"><img src="http://huangyan.qiniudn.com/woniu.jpg" width="100px"></div>
+    <div class="row testimg"><img src="http://huangyan.qiniudn.com/woniu.jpg" width="100px"></div>
+    <div class="row testimg"><img src="http://huangyan.qiniudn.com/woniu.jpg" width="100px"></div>
+    <div class="row testimg"><img src="http://huangyan.qiniudn.com/woniu.jpg" width="100px"></div>
+    <div class="row testimg"><img src="http://huangyan.qiniudn.com/woniu.jpg" width="100px"></div>
+
+</div>
+
+
+</body>
+</html>
